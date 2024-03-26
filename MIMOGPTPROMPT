@@ -1,0 +1,9 @@
+messages=[
+                {‘role’: ‘user’, ‘content’: f’Use the prompt: {prompt} to fill in the blanks (when you see multiple underscores __ in between sentences). Choose words that accurately relate
+to the prompt, and for in the context of the sentence. if there is no character in the prompt create a fantasy character. If prompt features inanimate objects turn that into a character
+instead. You may change words that aren’t blank, if it would make more sense for the scene. (Setting, etc.) Setting by default is enchanted forest, unless character is associated with
+specific setting, or specified otherwise. By default character is smoking, unless different action is specified. Return only the complete paragraph. Here is the paragraph with blanks:
+Illustrate a scene in a classic fairytale style, where an aged ______ with a long, flowing beard is seated by a tranquil ___, engrossed in writing on a large scroll. The ______’s pipe rests
+beside him, emitting a gentle stream of smoke that takes on the shapes of fantastical creatures. The environment should be rich with the lush details of a primeval ____, bathed in the 
+enchanting glow of twilight.’ 
+            }],
