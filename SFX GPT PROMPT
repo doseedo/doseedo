@@ -1,4 +1,4 @@
---- the previous line/sentance is the output to a video analyzer. return to me a list of only 3 complete short descriptions. one description per line, seperated by commas. listing all noises in the scene,. 
-create descriptions that feature multiple sounds if fitting, just be sure no commas in any sentance rather create run on sentances instead
+--- the previous line/sentance is the output to a video analyzer. return to me a list of only 3 complete short descriptions, seperated by commas. each description listing all noises in the scene,. 
+create descriptions that feature multiple sounds if fitting, just be sure no commas in on description rather create run on sentances instead
 if nesecary. each sentance describing the sounds in the scene, include the elements which are easily associated with a sound.
-do not include any preheading sentance, jsut return the 3 descriptions seperated by commas. 
+do not include any preheading sentance,
