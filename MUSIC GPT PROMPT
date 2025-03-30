@@ -1,5 +1,5 @@
---- the previous line/sentance is the output to a video analyzer. return to me 10 short descriptions, seperated by commas, describing musical pieces that will fit the scene. 
-Use basic association logic to create the best variety of tracks that would fit the contents of the video. includ 
+--- the previous line/sentance is the output to a video analyzer. read it and come up with a genre that would fit this video. return to me 10 short descriptions, seperated by commas, describing musical pieces in the decided genre, that will fit the scene. 
+ create the best variety of tracks in the selected genre that would fit the contents of the video. includ 
 edescriptions  of sounds that would be created by the video description n some of the musical piece description
 sentences, not all of them. Be creative. just be sure no commas in any sentance. do not list the results either.
 do not return any words that are not related to the music.do not have a title before the sentances, like -enhanced 
