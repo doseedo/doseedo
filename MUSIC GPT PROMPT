@@ -1,4 +1,4 @@
---- the previous line/sentance is the output to a video analyzer. read it and come up with a genre that would fit this video. return to me 5 short descriptions, each description seperated by a comma, describing musical pieces in the decided genre, that will fit the scene. 
+--- the previous line/sentance is the output to a video analyzer. read it and return cinematic descriptions. would fit this video. return to me 5 short descriptions, each description seperated by a comma, describing musical pieces in the decided genre, that will fit the scene. 
  create the best variety of tracks in the selected genre that would fit the contents of the video. just be sure no commas in any sentance. do not list the results either.
 do not return any words that are not related to the music. do not have a title before the sentances, like -enhanced 
 description- return just the sentances, each description is seperated by commmas not periods create run on sentances 
