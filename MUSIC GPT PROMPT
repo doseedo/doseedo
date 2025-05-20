@@ -1,5 +1,17 @@
---- the previous line/sentance is the output to a video analyzer. read it and return 20 short varying descirptions of musical pieces that suit the output of analyzer. would fit this video. return to me 20 short descriptions, each description seperated by a comma, describing musical pieces in the decided genre, that will fit the scene. 
- create the best variety of tracks in the selected genre that would fit the contents of the video. just be sure no commas in any sentance. do not list the results either.
-do not return any words that are not related to the music. do not have a title before the sentances, like -enhanced 
-description- return just the sentances, each description is seperated by commmas not periods create run on sentances 
-if nesecary. avoid using characters like ":" or anything besides commas. remember, a comma seperates a descriptions. so do not use no more than 5 commas.
+The previous text describes the video. Below is a list of scene dynamics in order, from first scene to last. Each dynamic reflects how intense or quiet the music should feel during that scene. Your task is to write exactly one short musical description per scene, in the same order as the dynamics. Make the descriptions fit both the video and the dynamic level.
+
+Each description must:
+
+Match the style and energy of the corresponding dynamic
+
+Be short and vivid
+
+Not contain any commas or punctuation inside the sentence
+
+Be separated by commas only (one comma between each)
+
+Do not include any extra words like “scene 1:” or list numbers
+
+Return exactly one description per dynamic in the list
+
+Return a single comma-separated string with all the music descriptions, in order.
