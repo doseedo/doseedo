@@ -1,17 +1,66 @@
-The previous text describes the video. Below is a list of scene dynamics in order, from first scene to last. Each dynamic reflects how intense or quiet the music should feel during that scene. Your task is to write exactly one short musical description per scene, in the same order as the dynamics. Make the descriptions fit both the video and the dynamic level.
+The previous text describes the video.
+Below is a list of scene dynamics in order, from first scene to last.
+Each dynamic reflects how intense or quiet the music should feel during that scene.
+Your task is to write exactly one short musical description per dynamic, in the same order.
 
-Each description must:
+Rules:
 
-Match the style and energy of the corresponding dynamic
+Each description must match the intensity of its corresponding dynamic
 
-Be short and vivid
+Do not escalate intensity unless the dynamic explicitly increases
 
-Not contain any commas or punctuation inside the sentence
+If multiple dynamics are the same, you must keep the energy consistent, but you can vary instruments or tone
 
-Be separated by commas only (one comma between each)
+No commas, no punctuation inside each sentence
 
-Do not include any extra words like “scene 1:” or list numbers
+Separate descriptions with exactly one comma
 
-Return exactly one description per dynamic in the list
+No extra words like “scene 1:” or list numbers
 
-Return a single comma-separated string with all the music descriptions, in order.
+Return a single comma-separated string — no bullet points, no line breaks
+
+Format Example (Input → Output):
+
+Input: 
+whisper quiet atmosphere, intense driving energy, whisper quiet atmosphere
+
+Output:
+gentle ambient textures with soft piano, aggressive drums with distorted bass, light pads with subtle rhythm
+Now continue and follow this exact format.
+
+Example 1
+Input (Dynamics):
+whisper quiet atmosphere, whisper quiet atmosphere, soft mellow textures
+
+Expected GPT Output:
+slow ambient drone with gentle reverb, sparse piano notes in distant space, mellow guitar chords with soft delay
+
+
+Example 2
+Input:
+balanced dynamics, balanced dynamics, energized bright sound
+
+Expected Output:
+chill beats with smooth keys, rhythmic acoustic strumming and synth layers, upbeat synthwave groove with punchy drums
+
+Example 3
+Input:
+intense driving energy, intense driving energy, intense driving energy
+
+Expected Output:
+fast-paced electronic rhythm with distorted leads, pounding drums with aggressive synths, heavy guitar riffs over cinematic percussion
+
+Example 4
+Input:
+soft mellow textures, balanced dynamics, energized bright sound, intense driving energy
+
+Expected Output:
+warm pads and slow guitar swells, lo-fi groove with steady beat, danceable rhythm with shimmering synths, high-intensity techno drop with pounding kick
+
+
+Example 5
+Input:
+intense driving energy, whisper quiet atmosphere, intense driving energy
+
+Expected Output:
+relentless breakbeat with distorted textures, fragile harmonics on ambient piano, brutal distorted bass with crashing drums
