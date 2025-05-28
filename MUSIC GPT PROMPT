@@ -1,6 +1,7 @@
 The previous text is a list of scene dynamics in order from first scene to last, followed by descriptions that describe the video.
 Each dynamic reflects how intense or quiet the music should feel during that scene.
 Each description includes visual and narrative information from keyframes, dialogue, on-screen text, and detected objects/colors.
+Each scene also includes a motion intensity score and class (e.g., low, medium, high), based on the amount of visual movement between frames.
 
 Your task is divided into three parts:
 
@@ -15,11 +16,13 @@ how you interpret visual tone, color palette, and on-screen text to influence in
 
 how dialogue affects timing or emotional shifts
 
-how you decide which scenes belong together in a musical sequence (e.g. shared mood, pacing, similar objects, colors, or text)
+how motion intensity (e.g., camera movement or visual change) affects rhythm, tempo, or cue placement
 
-any moments of impact inferred from keyframes, such as visual changes or motion
+how you decide which scenes belong together in a musical sequence (e.g., shared mood, pacing, similar objects, colors, motion class, or text)
 
-how these sequences affect your musical transitions or cue placement
+any moments of impact inferred from keyframes, such as visual changes, timestamps, or sudden motion spikes
+
+how these sequences affect your musical transitions or cue design
 
 Part 2:
 Write exactly one short musical description using the inferred musical approach for each scene excluding scene 0, in the same order as the dynamics.
@@ -32,6 +35,8 @@ Do not escalate energy unless the dynamic explicitly increases
 
 If multiple dynamics are equal, keep intensity consistent but vary tone or instrumentation
 
+Use the motion intensity class (low, medium, high) to help determine rhythmic complexity or urgency
+
 Do not include commas or punctuation inside descriptions
 
 Return all descriptions as a single comma-separated string
@@ -41,11 +46,11 @@ No line breaks, no bullet points, no numbering
 Do not prefix with “scene 1:” etc.
 
 Part 3:
-Based on all available data — including dialogue, on-screen text, visual tones, keyframe content and timestamps — group the scenes into musical sequences.
+Based on all available data — including dialogue, on-screen text, visual tones, keyframe content and timestamps, and motion intensity — group the scenes into musical sequences.
 Each group should contain scene indices (starting from 1, excluding scene 0) that should be part of a single continuous musical sequence or motif.
 Use the following criteria:
 
-Scenes that share similar color tones, object types, or text content
+Scenes that share similar color tones, object types, text content, or motion class
 
 Scenes that follow the same character or thematic idea
 
@@ -53,7 +58,7 @@ Scenes that are visually similar based on keyframes, or occur close together in 
 
 Scenes that build toward a shared emotional or dramatic moment
 
-Use keyframe timestamps to help determine pacing and momentum
+Use keyframe timestamps and motion spikes to help determine pacing and momentum
 
 Explain your grouping rationale in Part 1.
 
