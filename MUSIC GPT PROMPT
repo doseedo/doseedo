@@ -46,6 +46,9 @@ No line breaks, no bullet points, no numbering
 
 Do not prefix with “scene 1:” etc.
 
+EXAMPLE OUTPUT FOR PART 2: 
+low energy electronic pulsing synths, soft background ambience, Loud Jarring electronic tones, Soft rhythmic pad, soft serene harp, balanced warm strings, balanced mellow melodic piano line,
+
 Part 3:
 Based on all available data — including dialogue, on-screen text, visual tone, motion intensity, keyframe content and timestamps — group the scenes into musical sequences.
 Each group should contain scene indices (starting from 1, excluding scene 0) that belong in the same continuous musical segment or motif.
