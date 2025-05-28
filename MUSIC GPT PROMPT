@@ -1,74 +1,66 @@
-The previous text is a list of scene dynamics in order from first scene to last, followed by descriptions that describes the video,
+The previous text is a list of scene dynamics in order from first scene to last, followed by descriptions that describe the video.
 Each dynamic reflects how intense or quiet the music should feel during that scene.
+Each description includes visual and narrative information from keyframes, dialogue, on-screen text, and detected objects/colors.
 
+Your task is divided into three parts:
 
-Your task is to Part 1: try and to describe this video based on all the scene data. come up with a miscal theme to go with the video, 
-and describe your approach for the soundtrack of the video based on the data.
-Part 2: write exactly one short musical 
-description using the infered musical approach per dynamic, in the same order.
+Part 1:
+Describe this video as a whole, based on all the scene data.
+Come up with a musical theme that matches the overall tone and emotional arc of the video.
+Then explain your strategy for composing the soundtrack. Specifically, describe:
 
-seperate part 1 and part two with "////"
+how you will handle changes in musical intensity based on the scene dynamics
 
-Rules:
+how you interpret visual tone, color palette, and on-screen text to influence instrumentation
+
+how dialogue affects timing or emotional shifts
+
+how you decide which scenes belong together in a musical sequence (e.g. shared mood, pacing, similar objects, colors, or text)
+
+any moments of impact inferred from keyframes, such as visual changes or motion
+
+how these sequences affect your musical transitions or cue placement
+
+Part 2:
+Write exactly one short musical description using the inferred musical approach for each scene excluding scene 0, in the same order as the dynamics.
+
+Formatting rules for Part 2:
 
 Each description must match the intensity of its corresponding dynamic
 
-Do not escalate intensity unless the dynamic explicitly increases
+Do not escalate energy unless the dynamic explicitly increases
 
-If multiple dynamics are the same, you must keep the energy consistent, but you can vary instruments or tone
+If multiple dynamics are equal, keep intensity consistent but vary tone or instrumentation
 
-No commas, no punctuation inside each sentence
+Do not include commas or punctuation inside descriptions
 
-Separate descriptions with exactly one comma
+Return all descriptions as a single comma-separated string
 
-No extra words like “scene 1:” or list numbers
+No line breaks, no bullet points, no numbering
 
-Exclude scene 0 in the descriptions. 
+Do not prefix with “scene 1:” etc.
 
-Return a single comma-separated string — no bullet points, no line breaks
+Part 3:
+Based on all available data — including dialogue, on-screen text, visual tones, keyframe content and timestamps — group the scenes into musical sequences.
+Each group should contain scene indices (starting from 1, excluding scene 0) that should be part of a single continuous musical sequence or motif.
+Use the following criteria:
 
-Format Example (Input → Output):
+Scenes that share similar color tones, object types, or text content
 
-Input: 
-whisper quiet atmosphere, intense driving energy, whisper quiet atmosphere
+Scenes that follow the same character or thematic idea
 
-Output:
-gentle ambient textures with soft piano, aggressive drums with distorted bass, light pads with subtle rhythm
-Now continue and follow this exact format.
+Scenes that are visually similar based on keyframes, or occur close together in time
 
-Example 1
-Input (Dynamics):
-whisper quiet atmosphere, whisper quiet atmosphere, soft mellow textures
+Scenes that build toward a shared emotional or dramatic moment
 
-Expected GPT Output:
-slow ambient drone with gentle reverb, sparse piano notes in distant space, mellow guitar chords with soft delay
+Use keyframe timestamps to help determine pacing and momentum
 
+Explain your grouping rationale in Part 1.
 
-Example 2
-Input:
-balanced dynamics, balanced dynamics, energized bright sound
+Output format for Part 3:
+Return a list of integer lists, e.g.
+[[1, 2], [3], [4, 5, 6], [7]]
+This will be parsed by our backend to remap musical segments.
 
-Expected Output:
-chill beats with smooth keys, rhythmic acoustic strumming and synth layers, upbeat synthwave groove with punchy drums
-
-Example 3
-Input:
-intense driving energy, intense driving energy, intense driving energy
-
-Expected Output:
-fast-paced electronic rhythm with distorted leads, pounding drums with aggressive synths, heavy guitar riffs over cinematic percussion
-
-Example 4
-Input:
-soft mellow textures, balanced dynamics, energized bright sound, intense driving energy
-
-Expected Output:
-warm pads and slow guitar swells, lo-fi groove with steady beat, danceable rhythm with shimmering synths, high-intensity techno drop with pounding kick
-
-
-Example 5
-Input:
-intense driving energy, whisper quiet atmosphere, intense driving energy
-
-Expected Output:
-relentless breakbeat with distorted textures, fragile harmonics on ambient piano, brutal distorted bass with crashing drums
+Separate Part 1, Part 2, and Part 3 using the exact string:
+////
