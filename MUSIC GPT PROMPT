@@ -23,6 +23,8 @@ Separate descriptions with exactly one comma
 
 No extra words like “scene 1:” or list numbers
 
+Exclude scene 0 in the descriptions. 
+
 Return a single comma-separated string — no bullet points, no line breaks
 
 Format Example (Input → Output):
