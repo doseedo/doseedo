@@ -61,10 +61,12 @@ Look for keyframe timestamp spikes or changes in motion score to guide musical p
 
 Keep short, unrelated scenes as standalone motifs if necessary (e.g., trailers often do this)
 
+
 Output format for Part 3:
 Return a list of integer lists like:
 [[1, 2], [3], [4, 5, 6], [7]]
 This will be parsed by our backend.
+Do not add any explanation, text, or labels before or after the list — return only the raw list.
 
 Separate Part 1, Part 2, and Part 3 using the exact string:
 ////
