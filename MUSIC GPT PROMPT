@@ -1,31 +1,32 @@
 The previous text is a list of scene dynamics in order from first scene to last, followed by descriptions that describe the video.
 Each dynamic reflects how intense or quiet the music should feel during that scene.
-Each description includes visual and narrative information from keyframes, dialogue, on-screen text, and detected objects/colors.
+Each description includes visual and narrative information from keyframes, dialogue, on-screen text, and detected objects or motion.
 Each scene also includes a motion intensity score and class (e.g., low, medium, high), based on the amount of visual movement between frames.
 
 Your task is divided into three parts:
 
 Part 1:
-Describe this video as a whole, based on all the scene data.
-Come up with a musical theme that matches the overall tone and emotional arc of the video.
-Then explain your strategy for composing the soundtrack. Specifically, describe:
+First, infer what kind of video this is (e.g. short film, trailer, vlog, highlight reel, documentary, product ad) based on the total length, pacing, and scene structure.
+Describe this video as a whole using all available scene data.
+Then design a musical theme that matches the overall tone and emotional arc of the video.
+Next, explain your strategy for composing the soundtrack. Specifically:
 
-how you will handle changes in musical intensity based on the scene dynamics
+How you will handle changes in musical intensity based on the scene dynamics
 
-how you interpret visual tone, color palette, and on-screen text to influence instrumentation
+How you interpret visual tone, dominant colors, and on-screen text to influence instrumentation, genre, or harmonic texture (but do not mention color names in descriptions)
 
-how dialogue affects timing or emotional shifts
+How dialogue affects timing, musical silence, or emotional shifts
 
-how motion intensity (e.g., camera movement or visual change) affects rhythm, tempo, or cue placement
+How motion intensity (low, medium, high) influences rhythm, tempo, drive, or cue placement
 
-how you decide which scenes belong together in a musical sequence (e.g., shared mood, pacing, similar objects, colors, motion class, or text)
+How you determine which scenes should be grouped into musical sequences (based on mood, pace, shared motion class, object presence, text, tone, or keyframe timing)
 
-any moments of impact inferred from keyframes, such as visual changes, timestamps, or sudden motion spikes
+Where the musical transitions or moments of impact should occur based on keyframe analysis, timestamps, or visual change
 
-how these sequences affect your musical transitions or cue design
+How your strategy differs depending on the inferred video type (e.g. trailers need stronger motifs, vlogs need ambient scoring, etc.)
 
 Part 2:
-Write exactly one short musical description using the inferred musical approach for each scene excluding scene 0, in the same order as the dynamics. seperate each description by commas in one full string.
+Write exactly one short musical description using the inferred musical approach for each scene (excluding scene 0), in the same order as the dynamics.
 
 Formatting rules for Part 2:
 
@@ -35,37 +36,35 @@ Do not escalate energy unless the dynamic explicitly increases
 
 If multiple dynamics are equal, keep intensity consistent but vary tone or instrumentation
 
-Use the motion intensity class (low, medium, high) to help determine rhythmic complexity or urgency
+Use the motion intensity class (low, medium, high) to determine rhythmic drive or urgency
 
-Do not include commas or punctuation inside descriptions
+Do not include commas or punctuation inside any description
 
-Return all descriptions as a single comma-separated string
+Return a single comma-separated string
 
 No line breaks, no bullet points, no numbering
 
 Do not prefix with “scene 1:” etc.
 
 Part 3:
-Based on all available data — including dialogue, on-screen text, visual tones, keyframe content and timestamps, and motion intensity — group the scenes into musical sequences.
-Each group should contain scene indices (starting from 1, excluding scene 0) that should be part of a single continuous musical sequence or motif.
-Use the following criteria:
+Based on all available data — including dialogue, on-screen text, visual tone, motion intensity, keyframe content and timestamps — group the scenes into musical sequences.
+Each group should contain scene indices (starting from 1, excluding scene 0) that belong in the same continuous musical segment or motif.
+Use the following logic:
 
-Scenes that share similar color tones, object types, text content, or motion class
+Group scenes with similar tone, objects, text, or motion
 
-Scenes that follow the same character or thematic idea
+Link scenes that build or resolve an emotion or event
 
-Scenes that are visually similar based on keyframes, or occur close together in time
+Align sequences based on temporal closeness or pacing
 
-Scenes that build toward a shared emotional or dramatic moment
+Look for keyframe timestamp spikes or changes in motion score to guide musical phrasing
 
-Use keyframe timestamps and motion spikes to help determine pacing and momentum
-
-Explain your grouping rationale in Part 1.
+Keep short, unrelated scenes as standalone motifs if necessary (e.g., trailers often do this)
 
 Output format for Part 3:
-Return a list of integer lists, e.g.
+Return a list of integer lists like:
 [[1, 2], [3], [4, 5, 6], [7]]
-This will be parsed by our backend to remap musical segments.
+This will be parsed by our backend.
 
 Separate Part 1, Part 2, and Part 3 using the exact string:
 ////
