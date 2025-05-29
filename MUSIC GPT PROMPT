@@ -1,86 +1,75 @@
-Prompt:
+Part 1: Video Type, Theme, and Score Strategy
+Based on pacing, scene structure, and content, infer the type of video (e.g., ad, short film, vlog, trailer, etc.).
 
-The previous text is a list of scene dynamics in order from first scene to last, followed by descriptions that describe the video.
-Each dynamic reflects how intense or quiet the music should feel during that scene.
-Each description includes visual and narrative information from keyframes, dialogue, on-screen text, and detected objects or motion.
-Each scene also includes a motion intensity score and class (e.g., low, medium, high), based on the amount of visual movement between frames.
+Describe the overall tone, message, and purpose of the video.
 
-Your task is divided into three parts:
+Design a musical theme that matches this tone and emotional arc.
 
-Part 1:
-First, infer what kind of video this is (e.g. short film, trailer, vlog, highlight reel, documentary, product ad) based on the total length, pacing, and scene structure.
-Describe this video as a whole using all available scene data.
-Then design a musical theme that matches the overall tone and emotional arc of the video.
-Next, explain your strategy for composing the soundtrack. Specifically:
+Explain your musical scoring strategy in detail, addressing:
 
-How you will handle changes in musical intensity based on the scene dynamics
+How you vary musical intensity based on the dynamics
 
-How you interpret visual tone, dominant colors, and on-screen text to influence instrumentation, genre, or harmonic texture (but do not mention color names in descriptions)
+How visual tone, motion class, and detected text influence instrumentation and rhythm
 
-How dialogue affects timing, musical silence, or emotional shifts
+How spoken dialogue impacts silence or timing
 
-How motion intensity (low, medium, high) influences rhythm, tempo, drive, or cue placement
+How you decide where musical transitions or cues should occur
 
-How you determine which scenes should be grouped into musical sequences (based on mood, pace, shared motion class, object presence, text, tone, or keyframe timing)
+How your approach adapts to the inferred video type
 
-Where the musical transitions or moments of impact should occur based on keyframe analysis, timestamps, or visual change
+Describe each individual scene in detail — what you observe, what it implies, and how it contributes to the narrative or pacing.
 
-How your strategy differs depending on the inferred video type (e.g. trailers need stronger motifs, vlogs need ambient scoring, etc.)
+Do not include any scene shorter than 3 seconds in your grouping strategy (these must be skipped — treat them as musically irrelevant).
 
-Describe each scene in detail — all data given and what you infer. Include any cues based on keyframes. What is going on in this scene?
-Then recap the scenes chosen for each group and why you chose them.
-Before forming groups, exclude any scene that is shorter than 3 seconds.
-Then form scene groups where the total group duration is at least 10 seconds and ideally not more than 30 seconds.
+Recap which scenes you grouped together, ensuring that each group has a total duration of:
 
-Part 2:
-Write exactly one short musical description using the inferred musical approach for each scene group in the same order as the dynamics.
+At least 10 seconds
 
-Formatting rules for Part 2:
+Preferably no more than 30 seconds
 
-Each description must match the intensity of the corresponding dynamics within the scene group
+🔹 Part 2: Musical Descriptions for Each Scene Group
+For each scene group (from Part 1), write exactly one short musical description matching the group’s dynamics and motion intensity.
 
-Do not escalate energy unless the dynamic explicitly increases
+Rules:
 
-If multiple dynamics are equal, keep intensity consistent but vary tone or instrumentation
+Do not escalate energy unless the dynamics increase
 
-Use the motion intensity class (low, medium, high) to determine rhythmic drive or urgency
+If dynamics are equal, vary instrumentation or tone
 
-Do not include commas or punctuation inside any description
+Let motion class (low/medium/high) control tempo or rhythmic density
+
+Use no punctuation inside descriptions
 
 Return a single comma-separated string
 
-No line breaks, no bullet points, no numbering
+No newlines, no numbering, no prefix like “Scene 1:”
 
-Do not prefix with “scene 1:” etc.
+✅ Example output if the groups are [[1, 2], [3, 4], [5]]:
 
-EXAMPLE OUTPUT FOR PART 2:
-If Scene groups = [[1, 2], [3, 4, 5], [6, 7, 8], [9, 10], [11, 12, 13]], return:
-low energy electronic pulsing synths, soft background ambience, Loud Jarring electronic tones, Soft rhythmic pad, soft serene harp
+soft ambient texture, light pulsing synth, mellow string drone
 
-Part 3:
-Based on all available data — including dialogue, on-screen text, visual tone, motion intensity, keyframe content and timestamps — group the scenes into musical sequences.
-Each group should contain scene indices (starting from 1, excluding scene 0) that belong in the same continuous musical segment or motif.
-Use the following logic:
+🔹 Part 3: Scene Grouping
+Return the scene indices you grouped into musical sequences, as a list of lists (e.g. [[1, 2], [3, 4], [5]])
 
-Group scenes with similar tone, objects, text, or motion
+Rules:
 
-Link scenes that build or resolve an emotion or event
+Scene indices start at 1 (skip scene 0)
 
-Align sequences based on temporal closeness or pacing
+Omit any scene shorter than 3 seconds
 
-Look for keyframe timestamp spikes or changes in motion score to guide musical phrasing
+Ensure each group’s total duration is ≥10 seconds
 
-Keep short, unrelated scenes as standalone motifs if necessary (e.g., trailers often do this)
+Group based on shared tone, pacing, motion, text, or narrative role
 
-Before grouping, exclude any scene shorter than 3 seconds
+📌 Output format (no explanation, just the list):
 
-Ensure total duration of each group is at least 10 seconds
-
-Output format for Part 3:
-Return a list of integer lists like:
+json
+Copy
+Edit
 [[1, 2], [3], [4, 5, 6], [7]]
-This will be parsed by our backend.
-Do not add any explanation, text, or labels before or after the list — return only the raw list.
+✂️ Separate Part 1, Part 2, and Part 3 using only this delimiter:
 
-Separate Part 1, Part 2, and Part 3 using the exact string:
+cpp
+Copy
+Edit
 ////
