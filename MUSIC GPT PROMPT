@@ -1,90 +1,102 @@
-You are given detailed data about scenes in a video. Each scene includes visual descriptors, motion intensity, keyframes, on-screen text, and dialogue. Also provided is a list called scene_durations (in seconds), where scene_durations[i] corresponds to Scene i. Scene 0 is always excluded.
+You are given data describing a video made up of multiple scenes. Each scene includes a motion intensity score, keyframes, detected objects and text, spoken dialogue, and a dynamic rating indicating how intense or calm the music should feel. You are also given a list called scene_durations that specifies the exact duration (in seconds) of each scene.
 
 🔹 Part 1: Video Type, Theme, and Score Strategy
-Infer the video type (e.g., ad, short film, vlog, trailer, PSA) based on pacing, structure, and content.
+Infer the video type (e.g., short film, trailer, vlog, ad, PSA) based on pacing, content, and structure.
 
-Summarize the video’s overall tone and purpose. What message is it trying to convey?
+Summarize the video’s overall tone, emotional arc, and message.
 
-Design a musical theme that matches this emotional arc.
+Design a musical theme that fits the tone and arc.
 
-Explain your scoring strategy in detail, addressing:
+Explain your scoring strategy in detail:
 
-How you vary musical intensity based on the per-scene dynamics
+How you match music intensity to scene dynamics
 
-How visual tone, motion class, and on-screen text affect genre, instrumentation, or tempo
+How motion class (low, medium, high) influences tempo and rhythm
 
-How dialogue moments affect silence, timing, or shifts in emotion
+How visual tone, text, or object detection impacts instrumentation, genre, or harmony
 
-How and where musical transitions or accents should occur
+How dialogue affects musical silence or cue timing
+
+Where and how you transition between musical phrases
 
 How your strategy adapts to the inferred video type
 
-Describe each individual scene (Scene 1, 2, 3, etc.), including:
+Next:
 
-What you observe or infer from the scene data
+Describe each scene (Scene 1, Scene 2, etc.) in detail based on data provided.
 
-Its emotional or narrative role
+Then group scenes into musical sequences using the following rules:
 
-Whether it will be skipped due to duration (if less than 3 seconds)
+Grouping Rules:
+Every scene (except Scene 0) must be included in some group.
 
-Group the scenes into musical sequences.
-Use this logic:
+If a scene is shorter than 3 seconds, group it with one or more neighboring scenes.
 
-First, skip all scenes under 3 seconds — do not include them in any group
+Do not skip short scenes — they count toward group duration.
 
-Use scene_durations to calculate group durations
+Groups must have a minimum total duration of 10 seconds.
 
-Each group must have a total duration of at least 10 seconds
+Try to keep group durations between 10 and 30 seconds.
 
-Aim for groups that are ideally 10 to 30 seconds long
+Group based on shared:
 
-Group based on similar mood, pacing, objects, motion class, dialogue tone, or text
+mood
 
-Recap your groups using only the scene numbers you selected (Scene 1-based indexing).
+pacing
 
-🔹 Part 2: Musical Descriptions for Each Scene Group
-For each group from Part 1, write exactly one short musical description that fits:
+motion class
 
-Reflect the scene dynamics and motion class of that group
+dialogue tone
 
-If dynamics stay the same, vary instrumentation or texture (not intensity)
+detected objects or text
 
-Use motion class to influence tempo or rhythm density
+visual/narrative function
 
-📏 Formatting rules:
+After grouping:
+
+Recap which scenes you placed in each group.
+
+Scene numbers start at 1 (skip scene 0).
+
+🔹 Part 2: Musical Descriptions for Each Group
+Write one short music description per group using your inferred strategy.
+
+Rules:
+
+Match group dynamic and motion class
+
+If dynamics are equal, vary tone or texture
+
+Use motion intensity to shape rhythm/tempo
+
+Do not use punctuation inside descriptions
 
 Return a single comma-separated string
 
-No punctuation inside descriptions
-
-No newlines, no numbering, no quotation marks, no “Scene X:” labels
+Do not use newlines, numbers, or scene labels
 
 ✅ Example:
-If your groups are [[1, 2], [3, 4], [5]], return something like:
+If groups are [[1, 2], [3, 4], [5]], return:
+
 soft ambient texture, light pulsing synth, mellow string drone
 
 🔹 Part 3: Scene Grouping
-Output only the raw scene groupings as a list of integer lists.
-Follow these rules:
+Return only the raw grouping of scenes as a list of lists, using 1-based indexing (skip Scene 0).
 
-Scene numbers start at 1
+Rules:
 
-Do not include Scene 0
+Include every scene ≥ Scene 1
 
-Exclude any scene shorter than 3 seconds
+Group short scenes with neighbors (do not skip them)
 
-Ensure each group has a combined duration of at least 10 seconds, using the provided scene_durations
+Each group must total at least 10 seconds, based on scene_durations
 
-📌 Output format (no explanation, just the list):
+📌 Format (no explanation, just the list):
 
-lua
-Copy
-Edit
-[[1, 2], [3], [4, 5, 6], [7]]
-✂️ Delimiter Between Sections:
-Separate Part 1, Part 2, and Part 3 with this exact line:
 
-cpp
-Copy
-Edit
+[[1, 2], [3, 4, 5], [6]]
+✂️ Delimiter Between Sections
+Separate Part 1, Part 2, and Part 3 using this exact line:
+
+
 ////
