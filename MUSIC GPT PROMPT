@@ -45,7 +45,6 @@ Return a single comma-separated string
 No newlines, no numbering, no prefix like “Scene 1:”
 
 ✅ Example output if the groups are [[1, 2], [3, 4], [5]]:
-
 soft ambient texture, light pulsing synth, mellow string drone
 
 🔹 Part 3: Scene Grouping
@@ -62,9 +61,7 @@ Ensure each group’s total duration is ≥10 seconds
 Group based on shared tone, pacing, motion, text, or narrative role
 
 📌 Output format (no explanation, just the list):
-
 [[1, 2], [3], [4, 5, 6], [7]]
+
 ✂️ Separate Part 1, Part 2, and Part 3 using only this delimiter:
-
-
 ////
