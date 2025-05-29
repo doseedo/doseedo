@@ -60,7 +60,7 @@ Do not skip short scenes, add them to prev scene like the function — they coun
 
 Groups must have a minimum total duration of 10 seconds.
 
-DO NOT SKIP ANY SCENE! all scenes in the passed scene durations, should count as a scene. ALL SCENES MUST BE ACCOUNTED FOR Must keep group durations atleast 10s, try not to go beyond 30 seconds in one group.
+DO NOT SKIP ANY SCENE! all scenes in the passed scene durations, should count as a scene. ALL SCENES MUST BE ACCOUNTED FOR. You can ensure this my schecking the scene surations in scne data aswell, just include scenes within  Must keep group durations atleast 10s, try not to go beyond 30 seconds in one group.
 If the total duration of the video is 15 seconds for example, only return one scene group.
 for a 30s video, you could do 3 scene groups or just 2, depending what the video calls for.
 If video is ~30 seconds and scenes are consistent, not many changes, and seems it calls for 1 track the whole time,
