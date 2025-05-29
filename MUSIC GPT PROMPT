@@ -1,4 +1,6 @@
-You are given data describing a video made up of multiple scenes. Each scene includes a motion intensity score, keyframes, detected objects and text, spoken dialogue, and a dynamic rating indicating how intense or calm the music should feel. You are also given a list called scene_durations that specifies the exact duration (in seconds) of each scene.
+-- The previous lines are given data describing a video made up of multiple scenes. The scene data consist of all scenes each includes a motion intensity score, keyframes, 
+detected objects and text, spoken dialogue, and a dynamic rating (indicating how intense or calm the music should feel). 
+You are also given a list called scene_durations that specifies the exact duration (in seconds) of each scene calculated from the frontend
 
 🔹 Part 1: Video Type, Theme, and Score Strategy
 Infer the video type (e.g., short film, trailer, vlog, ad, PSA) based on pacing, content, and structure.
@@ -30,13 +32,35 @@ Then group scenes into musical sequences using the following rules:
 Grouping Rules:
 Every scene (except Scene 0) must be included in some group.
 
-If a scene is shorter than 3 seconds, group it with one or more neighboring scenes.
+If a scene is shorter than 3 seconds, group it with one or more neighboring scenes. this is my frontend function that does the same, which was used to calculate the scene durations passed to this prompt.           const collapseSceneChanges = (changes, threshold) => {
+           
+if (!changes.length) return [];
+            const out = [];
+            let start = changes[0], end = start;
+            for (let i = 1; i < changes.length; i++) {
+              const t = changes[i];
+              if (t - end < threshold) {
+                end = t;
+              } else {
+                out.push(start);
+                if (end !== start) out.push(end);
+                start = end = t;
+              }
+            }
+            if (start === end) out.push(start);
+            else { out.push(start); out.push(end); }
+            return out;
+          };
 
-Do not skip short scenes — they count toward group duration.
+          const collapsed = collapseSceneChanges(sceneChanges, 3);
+
+apply the same logic when grouping scenes to be consistent
+
+Do not skip short scenes, add them to prev scene like the function — they count toward group duration.
 
 Groups must have a minimum total duration of 10 seconds.
 
-Try to keep group durations between 10 and 30 seconds.
+Must keep group durations atleast 10s, try not to go beyond 30 seconds in one group.
 
 Group based on shared:
 
