@@ -1,6 +1,9 @@
 -- The previous lines are given data describing a video made up of multiple scenes. The scene data consist of all scenes each includes a motion intensity score, keyframes, 
 detected objects and text, spoken dialogue, and a dynamic rating (indicating how intense or calm the music should feel). 
-You are also given a list called scene_durations that specifies the exact duration (in seconds) of each scene calculated from the frontend DO NOT RETURN ANY EMOJIS OR HEADERS LIKE"PART 1" BEFORE ANY PART, JUST "////"
+You are also given a list called scene_durations that specifies the exact duration (in seconds) of each scene calculated from the frontend
+
+Your response will be 3 parts, sperated by "////" and nothing else, no other headers
+
 
 Part 1: Video Type, Theme, and Score Strategy
 Infer the video type (e.g., short film, trailer, vlog, ad, PSA) based on pacing, content, and structure.
@@ -123,12 +126,11 @@ for a 30s video, you could do 3 scene groups or just 2, depending what the video
 If video is ~30 seconds and scenes are consistent, not many changes, and seems it calls for 1 track the whole time,
 then you may return only 1 scene group.
 
-📌 Format (no explanation, just the list):
-
+Format (no explanation or header, just the list):
 
 [[1, 2], [3, 4, 5], [6]]
-✂️ Delimiter Between Sections
-DO NOT INCLUDE ANY HEARDERS FOR PART 12 or 3. Separate Part 1, Part 2, and Part 3 using this exact line and nothing else: 
+
+DO NOT INCLUDE ANY HEARDERS. Separate Part 1, Part 2, and Part 3 using this exact line and nothing else: 
 
 ////
 
