@@ -1,4 +1,4 @@
-UPDATED PROMPT:
+Prompt:
 
 The previous text is a list of scene dynamics in order from first scene to last, followed by descriptions that describe the video.
 Each dynamic reflects how intense or quiet the music should feel during that scene.
@@ -29,7 +29,8 @@ How your strategy differs depending on the inferred video type (e.g. trailers ne
 
 Describe each scene in detail — all data given and what you infer. Include any cues based on keyframes. What is going on in this scene?
 Then recap the scenes chosen for each group and why you chose them.
-Scene groups must be around ~10s minimum, ~30s maximum in total duration. Do not group scenes that add up to less than 10s.
+Before forming groups, exclude any scene that is shorter than 3 seconds.
+Then form scene groups where the total group duration is at least 10 seconds and ideally not more than 30 seconds.
 
 Part 2:
 Write exactly one short musical description using the inferred musical approach for each scene group in the same order as the dynamics.
@@ -59,7 +60,6 @@ low energy electronic pulsing synths, soft background ambience, Loud Jarring ele
 Part 3:
 Based on all available data — including dialogue, on-screen text, visual tone, motion intensity, keyframe content and timestamps — group the scenes into musical sequences.
 Each group should contain scene indices (starting from 1, excluding scene 0) that belong in the same continuous musical segment or motif.
-
 Use the following logic:
 
 Group scenes with similar tone, objects, text, or motion
@@ -71,6 +71,8 @@ Align sequences based on temporal closeness or pacing
 Look for keyframe timestamp spikes or changes in motion score to guide musical phrasing
 
 Keep short, unrelated scenes as standalone motifs if necessary (e.g., trailers often do this)
+
+Before grouping, exclude any scene shorter than 3 seconds
 
 Ensure total duration of each group is at least 10 seconds
 
