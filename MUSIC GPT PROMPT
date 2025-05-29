@@ -1,3 +1,5 @@
+UPDATED PROMPT:
+
 The previous text is a list of scene dynamics in order from first scene to last, followed by descriptions that describe the video.
 Each dynamic reflects how intense or quiet the music should feel during that scene.
 Each description includes visual and narrative information from keyframes, dialogue, on-screen text, and detected objects or motion.
@@ -25,16 +27,16 @@ Where the musical transitions or moments of impact should occur based on keyfram
 
 How your strategy differs depending on the inferred video type (e.g. trailers need stronger motifs, vlogs need ambient scoring, etc.)
 
-Describe each scene in detail, all data given and what you infer. any cues based on keyframes. what is going on in this scene?
-Then Recap the scenes chosen for each group and why you chose them.
-Scene groups shouldnt be too long or too short. around ~10s min, ~30s max
+Describe each scene in detail — all data given and what you infer. Include any cues based on keyframes. What is going on in this scene?
+Then recap the scenes chosen for each group and why you chose them.
+Scene groups must be around ~10s minimum, ~30s maximum in total duration. Do not group scenes that add up to less than 10s.
 
 Part 2:
 Write exactly one short musical description using the inferred musical approach for each scene group in the same order as the dynamics.
 
 Formatting rules for Part 2:
 
-Each description must match the intensity of the corresponding dynamics withing the scene group
+Each description must match the intensity of the corresponding dynamics within the scene group
 
 Do not escalate energy unless the dynamic explicitly increases
 
@@ -50,13 +52,14 @@ No line breaks, no bullet points, no numbering
 
 Do not prefix with “scene 1:” etc.
 
-EXAMPLE OUTPUT FOR PART 2:  Scene groups =  [[1, 2], [3, 4, 5], [6, 7, 8], [9, 10], [11, 12, 13]], will return 5 descriptions one for each scene group.
-
+EXAMPLE OUTPUT FOR PART 2:
+If Scene groups = [[1, 2], [3, 4, 5], [6, 7, 8], [9, 10], [11, 12, 13]], return:
 low energy electronic pulsing synths, soft background ambience, Loud Jarring electronic tones, Soft rhythmic pad, soft serene harp
 
 Part 3:
 Based on all available data — including dialogue, on-screen text, visual tone, motion intensity, keyframe content and timestamps — group the scenes into musical sequences.
 Each group should contain scene indices (starting from 1, excluding scene 0) that belong in the same continuous musical segment or motif.
+
 Use the following logic:
 
 Group scenes with similar tone, objects, text, or motion
@@ -69,6 +72,7 @@ Look for keyframe timestamp spikes or changes in motion score to guide musical p
 
 Keep short, unrelated scenes as standalone motifs if necessary (e.g., trailers often do this)
 
+Ensure total duration of each group is at least 10 seconds
 
 Output format for Part 3:
 Return a list of integer lists like:
