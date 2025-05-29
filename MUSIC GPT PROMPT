@@ -117,7 +117,11 @@ Include every scene ≥ Scene 1
 
 Group short scenes with neighbors (do not skip them)
 
-Each group must total at least 10 seconds, based on scene_durations
+Must keep group durations atleast 10s, try not to go beyond 30 seconds in one group.
+If the total duration of the video is 15 seconds for example, only return one scene group.
+for a 30s video, you could do 3 scene groups or just 2, depending what the video calls for.
+If video is ~30 seconds and scenes are consistent, not many changes, and seems it calls for 1 track the whole time,
+then you may return only 1 scene group.
 
 📌 Format (no explanation, just the list):
 
