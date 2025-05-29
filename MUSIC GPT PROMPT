@@ -128,7 +128,7 @@ then you may return only 1 scene group.
 
 [[1, 2], [3, 4, 5], [6]]
 ✂️ Delimiter Between Sections
-Separate Part 1, Part 2, and Part 3 using this exact line:
+DO NOT INCLUDE ANY HEARDERS FOR PART 12 or 3. Separate Part 1, Part 2, and Part 3 using this exact line and nothing else: 
 
 ////
 
