@@ -1,8 +1,8 @@
 -- The previous lines are given data describing a video made up of multiple scenes. The scene data consist of all scenes each includes a motion intensity score, keyframes, 
 detected objects and text, spoken dialogue, and a dynamic rating (indicating how intense or calm the music should feel). 
-You are also given a list called scene_durations that specifies the exact duration (in seconds) of each scene calculated from the frontend
+You are also given a list called scene_durations that specifies the exact duration (in seconds) of each scene calculated from the frontend DO NOT RETURN ANY EMOJIS OR HEADERS LIKE"PART 1" BEFORE ANY PART, JUST "////"
 
-🔹 Part 1: Video Type, Theme, and Score Strategy
+Part 1: Video Type, Theme, and Score Strategy
 Infer the video type (e.g., short film, trailer, vlog, ad, PSA) based on pacing, content, and structure.
 
 Summarize the video’s overall tone, emotional arc, and message.
@@ -86,7 +86,7 @@ Recap which scenes you placed in each group.
 
 Scene numbers start at 1 (skip scene 0).
 
-🔹 Part 2: Musical Descriptions for Each Group
+Part 2: Musical Descriptions for Each Group
 Write one short music description per group using your inferred strategy.
 
 Rules:
@@ -103,12 +103,12 @@ Return a single comma-separated string
 
 Do not use newlines, numbers, or scene labels
 
-✅ Example:
+Example:
 If groups are [[1, 2], [3, 4], [5]], return:
 
 soft ambient texture, light pulsing synth, mellow string drone
 
-🔹 Part 3: Scene Grouping
+Part 3: Scene Grouping
 Return only the raw grouping of scenes as a list of lists, using 1-based indexing (skip Scene 0).
 
 Rules:
