@@ -30,11 +30,11 @@ Then Recap the scenes chosen for each group and why you chose them.
 Scene groups shouldnt be too long or too short. around ~10s min, ~30s max
 
 Part 2:
-Write exactly one short musical description using the inferred musical approach for each scene (excluding scene 0), in the same order as the dynamics.
+Write exactly one short musical description using the inferred musical approach for each scene group in the same order as the dynamics.
 
 Formatting rules for Part 2:
 
-Each description must match the intensity of its corresponding dynamic
+Each description must match the intensity of the corresponding dynamics withing the scene group
 
 Do not escalate energy unless the dynamic explicitly increases
 
@@ -50,8 +50,9 @@ No line breaks, no bullet points, no numbering
 
 Do not prefix with “scene 1:” etc.
 
-EXAMPLE OUTPUT FOR PART 2: 
-low energy electronic pulsing synths, soft background ambience, Loud Jarring electronic tones, Soft rhythmic pad, soft serene harp, balanced warm strings, balanced mellow melodic piano line,
+EXAMPLE OUTPUT FOR PART 2:  Scene groups =  [[1, 2], [3, 4, 5], [6, 7, 8], [9, 10], [11, 12, 13]], will return 5 descriptions one for each scene group.
+
+low energy electronic pulsing synths, soft background ambience, Loud Jarring electronic tones, Soft rhythmic pad, soft serene harp
 
 Part 3:
 Based on all available data — including dialogue, on-screen text, visual tone, motion intensity, keyframe content and timestamps — group the scenes into musical sequences.
