@@ -63,13 +63,8 @@ Group based on shared tone, pacing, motion, text, or narrative role
 
 📌 Output format (no explanation, just the list):
 
-json
-Copy
-Edit
 [[1, 2], [3], [4, 5, 6], [7]]
 ✂️ Separate Part 1, Part 2, and Part 3 using only this delimiter:
 
-cpp
-Copy
-Edit
+
 ////
