@@ -1,67 +1,90 @@
-Part 1: Video Type, Theme, and Score Strategy
-Based on pacing, scene structure, and content, infer the type of video (e.g., ad, short film, vlog, trailer, etc.).
+You are given detailed data about scenes in a video. Each scene includes visual descriptors, motion intensity, keyframes, on-screen text, and dialogue. Also provided is a list called scene_durations (in seconds), where scene_durations[i] corresponds to Scene i. Scene 0 is always excluded.
 
-Describe the overall tone, message, and purpose of the video.
+🔹 Part 1: Video Type, Theme, and Score Strategy
+Infer the video type (e.g., ad, short film, vlog, trailer, PSA) based on pacing, structure, and content.
 
-Design a musical theme that matches this tone and emotional arc.
+Summarize the video’s overall tone and purpose. What message is it trying to convey?
 
-Explain your musical scoring strategy in detail, addressing:
+Design a musical theme that matches this emotional arc.
 
-How you vary musical intensity based on the dynamics
+Explain your scoring strategy in detail, addressing:
 
-How visual tone, motion class, and detected text influence instrumentation and rhythm
+How you vary musical intensity based on the per-scene dynamics
 
-How spoken dialogue impacts silence or timing
+How visual tone, motion class, and on-screen text affect genre, instrumentation, or tempo
 
-How you decide where musical transitions or cues should occur
+How dialogue moments affect silence, timing, or shifts in emotion
 
-How your approach adapts to the inferred video type
+How and where musical transitions or accents should occur
 
-Describe each individual scene in detail — what you observe, what it implies, and how it contributes to the narrative or pacing.
+How your strategy adapts to the inferred video type
 
-Do not include any scene shorter than 3 seconds in your grouping strategy (these must be skipped — treat them as musically irrelevant).
+Describe each individual scene (Scene 1, 2, 3, etc.), including:
 
-Recap which scenes you grouped together, ensuring that each group has a total duration of:
+What you observe or infer from the scene data
 
-At least 10 seconds
+Its emotional or narrative role
 
-Preferably no more than 30 seconds
+Whether it will be skipped due to duration (if less than 3 seconds)
+
+Group the scenes into musical sequences.
+Use this logic:
+
+First, skip all scenes under 3 seconds — do not include them in any group
+
+Use scene_durations to calculate group durations
+
+Each group must have a total duration of at least 10 seconds
+
+Aim for groups that are ideally 10 to 30 seconds long
+
+Group based on similar mood, pacing, objects, motion class, dialogue tone, or text
+
+Recap your groups using only the scene numbers you selected (Scene 1-based indexing).
 
 🔹 Part 2: Musical Descriptions for Each Scene Group
-For each scene group (from Part 1), write exactly one short musical description matching the group’s dynamics and motion intensity.
+For each group from Part 1, write exactly one short musical description that fits:
 
-Rules:
+Reflect the scene dynamics and motion class of that group
 
-Do not escalate energy unless the dynamics increase
+If dynamics stay the same, vary instrumentation or texture (not intensity)
 
-If dynamics are equal, vary instrumentation or tone
+Use motion class to influence tempo or rhythm density
 
-Let motion class (low/medium/high) control tempo or rhythmic density
-
-Use no punctuation inside descriptions
+📏 Formatting rules:
 
 Return a single comma-separated string
 
-No newlines, no numbering, no prefix like “Scene 1:”
+No punctuation inside descriptions
 
-✅ Example output if the groups are [[1, 2], [3, 4], [5]]:
+No newlines, no numbering, no quotation marks, no “Scene X:” labels
+
+✅ Example:
+If your groups are [[1, 2], [3, 4], [5]], return something like:
 soft ambient texture, light pulsing synth, mellow string drone
 
 🔹 Part 3: Scene Grouping
-Return the scene indices you grouped into musical sequences, as a list of lists (e.g. [[1, 2], [3, 4], [5]])
+Output only the raw scene groupings as a list of integer lists.
+Follow these rules:
 
-Rules:
+Scene numbers start at 1
 
-Scene indices start at 1 (skip scene 0)
+Do not include Scene 0
 
-Omit any scene shorter than 3 seconds
+Exclude any scene shorter than 3 seconds
 
-Ensure each group’s total duration is ≥10 seconds
-
-Group based on shared tone, pacing, motion, text, or narrative role
+Ensure each group has a combined duration of at least 10 seconds, using the provided scene_durations
 
 📌 Output format (no explanation, just the list):
-[[1, 2], [3], [4, 5, 6], [7]]
 
-✂️ Separate Part 1, Part 2, and Part 3 using only this delimiter:
+lua
+Copy
+Edit
+[[1, 2], [3], [4, 5, 6], [7]]
+✂️ Delimiter Between Sections:
+Separate Part 1, Part 2, and Part 3 with this exact line:
+
+cpp
+Copy
+Edit
 ////
