@@ -34,6 +34,8 @@ Then group scenes into musical sequences using the following rules:
 
 scenes shorter that 3 seconds will be grouped with the previous scenes
 
+ENSURE GROUPS ARE ALWAYS LONGER THAN 10 SECONDS
+
 Grouping Rules:
 Every scene (except Scene 0) must be included in some group.
 
