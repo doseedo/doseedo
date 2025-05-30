@@ -1,7 +1,8 @@
 -- The previous lines are given data describing a video made up of multiple scenes. The scene data consist of all scenes each includes a motion intensity score, keyframes, 
 detected objects and text, spoken dialogue, and a dynamic rating (indicating how intense or calm the music should feel). 
 You are also given a list called scene_durations that specifies the exact duration (in seconds) of each scene calculated from the frontend
-and a list called scene changes, which lists start every scene
+and a list called scene changes, which lists start of every scene. The scene data will include alot of scenes, but scenes under 3 seconds are grouped with the scene groupious and counted as one scene
+so be sure your list of scenes matches the passsed one
 Your response will be 3 parts, sperated by "////" and nothing else, no other headers
 
 
@@ -32,7 +33,7 @@ Describe each scene (Scene 1, Scene 2, etc.) in detail based on data provided.
 
 Then group scenes into musical sequences using the following rules:
 
-scenes shorter that 3 seconds will be grouped with the previous scenes
+scenes shorter that 3 seconds will be grouped with the previous scenes, the "real amount of scenes" is the amount of scene changes in the scene_changes upload
 
 ENSURE GROUPS ARE ALWAYS LONGER THAN 10 SECONDS
 
