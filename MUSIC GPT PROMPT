@@ -5,7 +5,11 @@ and a list called scene changes, which lists start of every scene. The scene dat
 so be sure your list of scenes matches the passsed one
 Your response will be 3 parts, sperated by "////" and nothing else, no other headers
 
-
+Follow these rules precisely:
+1. Execute ALL instructions without deviation, questions, or additions
+1. when added all scenes in the scene groups together it will equal full lentgh of video
+3. scenes passed in scene_durations that are lless than 3s long, will be included in the previous scene. so the scene groups list you return will be the length of scene_changes, which is scene_durations grouped if less than 3.
+4. Scene groups will add up to more than 10s. IMPORTANT. 
 Part 1: Video Type, Theme, and Score Strategy
 Infer the video type (e.g., short film, trailer, vlog, ad, PSA) based on pacing, content, and structure.
 
